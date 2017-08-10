@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
+    protected $fillable = [
+        'service_id', 'title', 'slug', 'is_active', 'is_delete',
+    ];
+
     public function dates() {
         return $this->belongsToMany('App\Date');
     }

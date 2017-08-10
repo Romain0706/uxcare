@@ -19,6 +19,8 @@ $api->version('v1', function ($api) {
     $api->post('customer/create', 'App\Http\Controllers\Api\CustomerController@store');
     $api->post('project/create', 'App\Http\Controllers\Api\ProjectController@store');
     $api->post('contact/create', 'App\Http\Controllers\Api\ContactController@store');
+    $api->post('service/create', 'App\Http\Controllers\Api\ServiceController@store');
+    $api->post('campaign/create', 'App\Http\Controllers\Api\CampaignController@store');
 
     $api->group(['middleware' => 'api.auth'], function ($api) {
 
@@ -27,6 +29,8 @@ $api->version('v1', function ($api) {
             $api->get('customer', 'App\Http\Controllers\Api\CustomerController@index');
             $api->get('project', 'App\Http\Controllers\Api\ProjectController@index');
             $api->get('contact', 'App\Http\Controllers\Api\ContactController@index');
+            $api->get('service', 'App\Http\Controllers\Api\ServiceController@index');
+            $api->get('campaign', 'App\Http\Controllers\Api\CampaignController@index');
         });
     });
 });

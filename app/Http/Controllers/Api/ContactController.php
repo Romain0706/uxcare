@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contact;
-use App\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
