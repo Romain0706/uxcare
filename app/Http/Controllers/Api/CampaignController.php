@@ -13,6 +13,21 @@ class CampaignController extends Controller
         return Campaign::all();
     }
 
+    public function state(Request $request) {
+        $this->validate($request, [
+            'campaign_id' => 'required',
+        ]);
+
+        $campaign = Campaign::where('id', Input::get('campaign_id'))->first();
+        if($campaign->is_active) {
+            $campaign->update(['is_active' => 0]);
+        } else {
+            $campaign->update(['is_active' => 1]);
+        }
+
+        return 'ok';
+    }
+
     //changer description en slug
     public function store(Request $request)
     {

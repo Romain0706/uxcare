@@ -21,6 +21,7 @@ $api->version('v1', function ($api) {
     $api->post('contact/create', 'App\Http\Controllers\Api\ContactController@store');
     $api->post('service/create', 'App\Http\Controllers\Api\ServiceController@store');
     $api->post('campaign/create', 'App\Http\Controllers\Api\CampaignController@store');
+    $api->post('campaign/state', 'App\Http\Controllers\Api\CampaignController@state');
 
     $api->group(['middleware' => 'api.auth'], function ($api) {
 
