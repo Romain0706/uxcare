@@ -32,6 +32,7 @@ $api->version('v1', function ($api) {
             $api->get('contact', 'App\Http\Controllers\Api\ContactController@index');
             $api->get('service', 'App\Http\Controllers\Api\ServiceController@index');
             $api->get('campaign', 'App\Http\Controllers\Api\CampaignController@index');
+            $api->get('date', 'App\Http\Controllers\Api\DateController@index');
         });
     });
 });
