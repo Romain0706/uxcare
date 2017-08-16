@@ -28,7 +28,18 @@ class CampaignController extends Controller
         return 'ok';
     }
 
-    //changer description en slug
+    public function search(Request $request) {
+        $this->validate($request, [
+            'search' =>  'required'
+        ]);
+
+        $searchInput = Input::get('search');
+
+        $searchedCampaign = Campaign::where('title', 'like', '%'.$searchInput.'%')->get();
+
+        return $searchedCampaign;
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
