@@ -23,6 +23,7 @@ $api->version('v1', function ($api) {
     $api->post('campaign/create', 'App\Http\Controllers\Api\CampaignController@store');
     $api->post('campaign/state', 'App\Http\Controllers\Api\CampaignController@state');
     $api->post('campaign', 'App\Http\Controllers\Api\CampaignController@search');
+    $api->post('project', 'App\Http\Controllers\Api\ProjectController@search');
 
     $api->group(['middleware' => 'api.auth'], function ($api) {
 

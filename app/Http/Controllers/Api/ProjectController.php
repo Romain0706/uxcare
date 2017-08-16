@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Customer;
 use App\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,6 +11,18 @@ class ProjectController extends Controller
 {
     public function index() {
         return Project::all();
+    }
+
+    public function search(Request $request) {
+        $this->validate($request, [
+            'search' => 'required',
+        ]);
+
+        $searchInput = Input::get('search');
+
+        $searchedProject = Project::where('name', 'like', '%'.$searchInput.'%')->get();
+
+        return $searchedProject;
     }
 
     public function store(Request $request)
